@@ -196,7 +196,7 @@ def predict():
     pros = shaps.sort_values(ascending=False)[:2].index
     cons = shaps.sort_values(ascending=True)[:2].index
 
-    output_str = jsonify(prediction=float(pred),
+    output_str = jsonify(prediction=int(pred),
                          pros1=pros[0],
                          pros2=pros[1],
                          cons1=cons[0],
