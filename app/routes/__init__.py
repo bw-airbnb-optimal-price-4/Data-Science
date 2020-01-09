@@ -4,7 +4,7 @@ from app.controllers import *
 blueprint = Blueprint('routes', __name__)
 
 
-@blueprint.route('/predict')
+@blueprint.route('/prediction')
 def predict():
     return predictions.predict()
 
