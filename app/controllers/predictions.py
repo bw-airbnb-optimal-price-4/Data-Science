@@ -48,8 +48,8 @@ def predict():
                             'Treehouse':              11,
                             'Villa':                  32,
                             'Yurt':                   6}
-    room_type_mapper = {'Entire home/apt': 2, 'Hotel room': 3,
-                        'Private Room':    1, 'Shared room': 0}
+    room_type_mapper = {'Entire Home/Apt': 2, 'Hotel Room': 3,
+                        'Private Room':    1, 'Shared Room': 0}
     neighborhood_mapper = {'Allendale':                  35,
                            'Anderson Mill':              6,
                            'Angus Valley':               12,
