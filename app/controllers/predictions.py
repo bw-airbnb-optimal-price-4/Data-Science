@@ -4,6 +4,7 @@ import shap
 import onnxruntime as rt
 from flask import request, jsonify
 from app.models.listing import Listing
+import datetime
 
 
 def predict():
@@ -144,8 +145,9 @@ def predict():
     categorical_features = ['property_type', 'room_type', 'neighborhood']
 
     # save month and year
-    month = 12
-    year = 19
+    now = datetime.datetime.now()
+    month = now.month
+    year = int(str(now.year)[1:])
 
     # get listing
     listing = Listing.query.get(int(request.args['id']))
@@ -163,7 +165,7 @@ def predict():
         "accommodates":  listing.accommodates,
         "bedrooms":      listing.bedrooms,
         "bathrooms":     listing.bathrooms,
-        "beds":          listing.bedrooms
+        "beds":          listing.beds
     }, index=[0])
 
     listing_trans = listing.copy()
